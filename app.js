@@ -23,7 +23,7 @@ console.log(computerChoice);
 
 function playGame(playerSelection, computerSelection){
     if (playerSelection = computerSelection){
-        console.log("Its a Draw!")
+        roundWinner = "tie";
     }
     if(
         (playerSelection === "ROCK" && computerSelection === "SCISSORS") ||
@@ -54,4 +54,28 @@ const computerScorePara = document.getElementById("computerScoreP");
 const rockBtn = document.getElementById("rock-btn");
 const paperBtn = document.getElementById("paper-btn");
 const scissorBtn = document.getElementById("scissor-btn");
-const resetBtn = document.getElementById("reset-btn")
+const resetBtn = document.getElementById("reset-btn");
+const infoBanner = document.getElementById("info-banner")
+
+function updateScore() {
+    if (roundWinner === 'tie') {
+      infoBanner.textContent = "It's a tie!"
+    } else if (roundWinner === 'player') {
+        infoBanner.textContent = 'You won!'
+    } else if (roundWinner === 'computer') {
+        infoBanner.textContent = 'You lost!'
+    }
+  
+    playerScorePara.textContent = `Player: ${playerScore}`
+    computerScorePara.textContent = `Computer: ${computerScore}`
+  }
+
+function scoreUpdate(){
+    if (roundWinner === "tie"){
+        game-result.textContent = "It's a draw!";
+    }
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+  }
