@@ -4,19 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    
-    <script>
-        function getComputerChoice(){
-            computerChoice = Math.floor(Math.random() * 3) + 1;
-            console.log(computerChoice);
-        }
+    <!-- Title -->
+    <div class="title-section">
+        <h1>Rock Paper Scissors</h1>
+        <h3>Pick your poison</h3>
+    </div>
 
-        let playerChoice = parseInt(prompt("Please make a choice: 1 = Rock, 2 = Paper, 3 = Scissors"));
+    <!-- Choices -->
+    <div class="selection-screen">
+        <div class="choice rock">
+            <img src="img/david-pisnoy-GmN13w9bg8w-unsplash.jpg" alt="Rock" id="rock-btn">
+        </div>
+        <div class="choice paper">
+            <img src="img/andrej-lisakov-fGZ2x8wFxC0-unsplash.jpg" alt="Paper" id="paper-btn">
+        </div>
+        <div class="choice scissors">
+            <img src="img/alex-gruber-KVsFiYXy0BE-unsplash.jpg" alt="Scissors" id="scissors-btn">
+        </div>
+    </div>
 
-        
-    </script>
+    <!-- Results and outcome message -->
+    <div class="results">
+        <div class="game-result">
+            <p>You win!</p>
+        </div>
+        <div class="score">
+            <p class="computer-score" id="computerScoreP">
+                Computer: 5
+            </p>
+            <p class="player-score" id="playerScoreP">
+                Player: 3
+            </p>
+        </div>
+        <div class="buttons">
+            <button class="reset" id="reset-btn">Reset</button>
+        </div>
+    </div>
+  <script src="app.js"></script>  
 </body>
 </html>
